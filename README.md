@@ -1,38 +1,14 @@
 OpenCart-Coupons-Expansion
 ==========================
 
-Модуль OpenCart, который расширяет возможности купонов, превращает их в дисконтные карты
-Поддерживаемые версии OpenCart: 1.5.4.x, 1.5.3.x, 1.5.1.x, возможно 1.5.2.x
+Installation:
 
-Модуль расширяет функционал OpenCart по работе с купонами:
+1. In phpMyAdmin or another MySQL client, execute the query:
+ALTER TABLE `oc_coupon` ADD` discount_plan` TEXT CHARACTER SET utf8 COLLATE utf8_bin NOT NULL AFTER `discount`
+Notice your OpenCart table prefix. If necessary, change the 'os_' in the request to your prefix.
 
-1. Купоны с накопительными скидками (дисконтные карты), 
-т.е. купоны, которые автоматически меняют процент скидки в зависимости от
-суммы завершенных заказов (заказы в статусе "Сделка завершена").
+2. Make a backup copy of the files that the module overwrites
 
-2. Пороги перехода и проценты скидки задаются в системе администрирования.
-Например: 0р. - 3%, 10000р. и более - 5%, 20000р. и более - 7%.
+3. From the 'upload' folder for OpenCart versions 1.5.3.x and 1.5.4.x and from the 'upload' folder for 1.5.1.x copy the module files to the site
 
-3. Купоны на подарки, т.е. купоны при вводе которых в корзину добавляется
-подарок (подарки), или определенный товар со скидкой.
-
-4. Пакетная генерация купонов, например для выпуска скидочных карт.
-
-5. Фильтр/поиск купонов по имени и коду.
-
-6. Экспорт списка купонов в формат CSV.
-
-7. Незначительная доработка истории применения купона: отображение суммы и статуса заказа.
-
-
-Установка:
-
-1. В phpMyAdmin или в ином клиенте MySQL выполнить запрос:
-ALTER TABLE `oc_coupon` ADD `discount_plan` TEXT CHARACTER SET utf8 COLLATE utf8_bin NOT NULL AFTER `discount` 
-Обратите внимание на ваш префикс таблиц OpenCart. При необходимости поменяйте в запросе 'ос_' на ваш префикс.
-
-2. Сделайте резервную копию файлов, которые переписывает модуль
-
-3. Из папки 'upload' для OpenCart версии 1.5.3.x и  1.5.4.x и из папки 'upload' для 1.5.1.x скопируйте файлы модуля на сайт
-
-Инструкцию по работе с накопительными скидками читайте на сайте: http://sourcedistillery.com/nakopitelnye_skidki_v_opencart.html
+For instructions on working with cumulative discounts, see the website: http://sourcedistillery.com/nakopitelnye_skidki_v_opencart.html 
